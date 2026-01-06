@@ -12,7 +12,7 @@
         <!-- Conteúdo Central -->
         <div class="relative z-10 flex flex-col items-center justify-center h-full px-4">
             <h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-center tracking-tight">
-                Dev em Projetos de TI
+                Dev em Projetos TI
             </h1>
             <p class="text-blue-300 text-xl md:text-2xl font-light text-center">
                 by kaylane coutinho
