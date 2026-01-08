@@ -15,7 +15,7 @@
             <div class="mb-12">
                 <h2 class="text-2xl font-bold text-white mb-6">Planilhas</h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div v-for="project in projects.planilhas" :key="project.id" @click="openProject(project)"
+                    <div v-for="project in projects.planilhas" :key="project.id" @click="openProject(project, false)"
                         class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                         :style="{ boxShadow: `0 20px 50px ${project.shadowColor}` }">
                         <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
@@ -42,19 +42,20 @@
                 </div>
             </div>
 
-            <!-- Dev-Aplicativos Internos Section -->
+            <!-- Dev-Aplicativos Internos Section - COM SUPORTE A VERTICAL -->
             <div class="mb-12">
                 <h2 class="text-2xl font-bold text-white mb-6">Dev-Aplicativos Internos</h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div v-for="project in projects.aplicativos" :key="project.id" @click="openProject(project)"
+                    <div v-for="project in projects.aplicativos" :key="project.id" @click="openProject(project, true)"
                         class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                         :style="{ boxShadow: `0 20px 50px ${project.shadowColor}` }">
                         <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
                             :style="{ background: `linear-gradient(to right, ${project.shadowColor}, ${project.shadowColor})` }">
                         </div>
-                        <div class="relative h-48 overflow-hidden">
+                        <!-- Card com altura maior para imagens verticais -->
+                        <div class="relative h-64 overflow-hidden bg-slate-900">
                             <img :src="project.coverImage" :alt="project.title"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,7 +78,7 @@
             <div>
                 <h2 class="text-2xl font-bold text-white mb-6">Front-end</h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div v-for="project in projects.frontend" :key="project.id" @click="openProject(project)"
+                    <div v-for="project in projects.frontend" :key="project.id" @click="openProject(project, false)"
                         class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                         :style="{ boxShadow: `0 20px 50px ${project.shadowColor}` }">
                         <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
@@ -122,11 +123,20 @@
                 </div>
 
                 <div class="p-6 space-y-6">
-                    <!-- Video Section -->
-                    <div class="aspect-video rounded-xl overflow-hidden bg-slate-800">
-                        <video class="w-full h-full object-cover" controls :src="selectedProject.videoUrl">
-                            Seu navegador não suporta vídeos.
-                        </video>
+                    <!-- Video Section - Condicional para vertical ou horizontal -->
+                    <div :class="isVerticalMode ? 'flex justify-center' : ''">
+                        <div :class="[
+                            'rounded-xl overflow-hidden bg-slate-800',
+                            isVerticalMode ? 'w-auto max-w-sm aspect-[9/16]' : 'aspect-video w-full'
+                        ]">
+                            <video 
+                                class="w-full h-full"
+                                :class="isVerticalMode ? 'object-contain' : 'object-cover'"
+                                controls 
+                                :src="selectedProject.videoUrl">
+                                Seu navegador não suporta vídeos.
+                            </video>
+                        </div>
                     </div>
 
                     <!-- Description Section -->
@@ -150,74 +160,39 @@ import { ref, watch } from 'vue'
 
 const selectedProject = ref(null)
 const projectDescription = ref('')
+const isVerticalMode = ref(false)
 
 const projects = {
     planilhas: [
         {
             id: 1,
-            title: 'Sistema de Gestão de Inventário',
-            description: 'Um sistema robusto para gerenciar e rastrear o inventário de produtos, facilitando o controle de estoque.',
-            coverImage: '/image/imagem1.jpg',
-            videoUrl: '/videos/videominhajornada.mp4',
+            title: 'Gestão de Cobranças Inteligente',
+            description: 'Sistema para gerenciamento de clientes e faturas, com controle de vencimentos e envio automatizado de mensagens de cobrança via WhatsApp.',
+            coverImage: '/image/imagemplanilha.png',
+            videoUrl: '/videos/videoplanilha.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para otimizar o controle de estoque de uma empresa de médio porte. Utilizando fórmulas avançadas do Excel e integração com Power Query, o sistema permite rastreamento em tempo real, alertas de estoque baixo e relatórios automatizados.',
             shadowColor: 'rgba(6,182,212,0.3)'
         },
-        {
-            id: 2,
-            title: 'Ferramenta de Análise Financeira',
-            description: 'Analise dados financeiros de forma eficiente com gráficos interativos e relatórios detalhados.',
-            coverImage: '/image/imagem2.jpg',
-            videoUrl: '/videos/videotelahero.mp4',
-            detailedDescription: 'Ferramenta completa de análise financeira que integra múltiplas fontes de dados. Possui dashboards dinâmicos, projeções automáticas e análise de tendências para tomada de decisões estratégicas.',
-            shadowColor: 'rgba(16,185,129,0.3)'
-        },
-        {
-            id: 3,
-            title: 'Automação de Relatórios de Vendas',
-            description: 'Automatize a criação de relatórios de vendas com dados atualizados em tempo real.',
-            coverImage: '/image/imagem3.jpg',
-            videoUrl: '/videos/videominhajornada.mp4',
-            detailedDescription: 'Sistema automatizado que gera relatórios de vendas mensais, semanais e diários. Integra dados de diferentes plataformas e gera gráficos personalizados automaticamente.',
-            shadowColor: 'rgba(148,163,184,0.3)'
-        }
     ],
     aplicativos: [
         {
             id: 4,
-            title: 'Aplicativo de Gestão de Tarefas',
-            description: 'Um aplicativo para gerenciar tarefas diárias de equipe de forma colaborativa e eficiente.',
-            coverImage: '/image/imagem4.jpg',
-            videoUrl: '/videos/videominhajornada.mp4',
-            detailedDescription: 'Aplicativo desenvolvido com interface intuitiva para gerenciamento de tarefas em equipe. Possui recursos de atribuição, priorização, notificações e acompanhamento de progresso.',
+            title: 'Gestor de Coleções',
+            description: 'Este projeto foi desenvolvido para organizar e gerenciar a coleção de um colecionador, permitindo o controle detalhado dos itens possuídos e facilitando a filtragem e a consulta, garantindo mais organização e praticidade.',
+            coverImage: '/image/imagemappinterno.jpeg',
+            videoUrl: '/videos/videoappinterno.mp4',
+            detailedDescription: 'Este projeto foi desenvolvido para organizar e gerenciar a coleção de um colecionador, permitindo o controle detalhado dos itens possuídos e facilitando a filtragem e a consulta, garantindo mais organização e praticidade.',
             shadowColor: 'rgba(251,146,60,0.3)'
         },
-        {
-            id: 5,
-            title: 'Sistema de Rastreamento de Pedidos',
-            description: 'Rastreie pedidos em tempo real desde a produção até a entrega ao cliente final.',
-            coverImage: '/image/imagem5.jpg',
-            videoUrl: '/videos/videotelahero.mp4',
-            detailedDescription: 'Sistema completo de rastreamento que integra todas as etapas do processo logístico. Permite acompanhamento em tempo real e notificações automáticas para clientes.',
-            shadowColor: 'rgba(6,182,212,0.3)'
-        },
-        {
-            id: 6,
-            title: 'Plataforma de Gerenciamento Interno',
-            description: 'Uma plataforma completa para gerenciar processos internos da empresa de forma integrada.',
-            coverImage: '/image/imagem6.jpg',
-            videoUrl: '/videos/videominhajornada.mp4',
-            detailedDescription: 'Plataforma centralizada que integra RH, financeiro e operações. Automatiza workflows e facilita a comunicação entre departamentos.',
-            shadowColor: 'rgba(16,185,129,0.3)'
-        }
     ],
     frontend: [
         {
             id: 7,
-            title: 'Landing Page para Startup',
-            description: 'Uma landing page moderna e responsiva desenvolvida para capturar leads e conversões.',
-            coverImage: '/image/imagem7.jpg',
-            videoUrl: '/videos/videominhajornada.mp4',
-            detailedDescription: 'Landing page desenvolvida com foco em conversão. Design responsivo, animações suaves e otimização para SEO. Taxa de conversão aumentada em 45%.',
+            title: 'Sistema de Autenticação',
+            description: 'Este projeto foi desenvolvido para implementar as telas de autenticação de um sistema geral, garantindo segurança e padronização no acesso.',
+            coverImage: '/image/imagemtelasautenticação.png',
+            videoUrl: '/videos/videotelasautenticação.mp4',
+            detailedDescription: 'Este projeto foi desenvolvido para implementar as telas de autenticação de um sistema geral, garantindo segurança e padronização no acesso.',
             shadowColor: 'rgba(6,182,212,0.3)'
         },
         {
@@ -241,14 +216,16 @@ const projects = {
     ]
 }
 
-const openProject = (project) => {
+const openProject = (project, isVertical) => {
     selectedProject.value = project
     projectDescription.value = project.detailedDescription
+    isVerticalMode.value = isVertical
 }
 
 watch(selectedProject, (newVal) => {
     if (!newVal) {
         projectDescription.value = ''
+        isVerticalMode.value = false
     }
 })
 </script>
