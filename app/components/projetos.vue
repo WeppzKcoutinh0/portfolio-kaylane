@@ -168,7 +168,7 @@ const projects = {
             id: 1,
             title: 'Gestão de Cobranças Inteligente',
             description: 'Sistema para gerenciamento de clientes e faturas, com controle de vencimentos e envio automatizado de mensagens de cobrança via WhatsApp.',
-            coverImage: '/image/imagemplanilha.png',
+            coverImage: '/Image/imagemplanilha.png',
             videoUrl: '/videos/videoplanilha.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para otimizar o controle de estoque de uma empresa de médio porte. Utilizando fórmulas avançadas do Excel e integração com Power Query, o sistema permite rastreamento em tempo real, alertas de estoque baixo e relatórios automatizados.',
             shadowColor: 'rgba(6,182,212,0.3)'
@@ -179,7 +179,7 @@ const projects = {
             id: 4,
             title: 'Gestor de Coleções',
             description: 'Este projeto foi desenvolvido para organizar e gerenciar a coleção de um colecionador, permitindo o controle detalhado dos itens possuídos e facilitando a filtragem e a consulta, garantindo mais organização e praticidade.',
-            coverImage: '/image/imagemappinterno.jpeg',
+            coverImage: '/Image/imagemappinterno.jpeg',
             videoUrl: '/videos/videoappinterno.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para organizar e gerenciar a coleção de um colecionador, permitindo o controle detalhado dos itens possuídos e facilitando a filtragem e a consulta, garantindo mais organização e praticidade.',
             shadowColor: 'rgba(251,146,60,0.3)'
@@ -190,8 +190,8 @@ const projects = {
             id: 7,
             title: 'Sistema de Autenticação',
             description: 'Este projeto foi desenvolvido para implementar as telas de autenticação de um sistema geral, garantindo segurança e padronização no acesso.',
-            coverImage: '/image/imagemtelasautenticação.png',
-            videoUrl: '/videos/videotelasautenticação.mp4',
+            coverImage: '/Image/imagemtelasautenticacao.png',
+            videoUrl: '/videos/videotelasautenticacao.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para implementar as telas de autenticação de um sistema geral, garantindo segurança e padronização no acesso.',
             shadowColor: 'rgba(6,182,212,0.3)'
         },
@@ -199,7 +199,7 @@ const projects = {
             id: 8,
             title: 'Sistema de Aulas',
             description: 'Este projeto foi desenvolvido para implementar as telas de homepage do cliente em um sistema geral. A homepage corresponde a um sistema de conteúdos e aulas, no qual o usuário pode acessar seus materiais, visualizar os conteúdos disponíveis e iniciar trilhas de aprendizagem.',
-            coverImage: '/image/imagemtelahomepagecliente.png',
+            coverImage: '/Image/imagemtelahomepagecliente.png',
             videoUrl: '/videos/videotelahomepagecliente.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para implementar as telas de homepage do cliente em um sistema geral. A homepage corresponde a um sistema de conteúdos e aulas, no qual o usuário pode acessar seus materiais, visualizar os conteúdos disponíveis e iniciar trilhas de aprendizagem.',
             shadowColor: 'rgba(148,163,184,0.3)'
@@ -208,8 +208,8 @@ const projects = {
             id: 9,
             title: 'Trilha de Conteúdos',
             description: 'Este projeto foi desenvolvido para implementar as telas de visualização de conteúdo do cliente em um sistema geral. Essas telas fazem parte de uma plataforma de conteúdos e aulas, permitindo que o usuário acesse sua trilha de aprendizagem após entrar na homepage e dê início ao consumo dos conteúdos.',
-            coverImage: '/image/imagemtelavisualizaçãoconteúdocliente.png',
-            videoUrl: '/videos/videotelavisualizaçãodeconteudocliente.mp4',
+            coverImage: '/Image/imagemtelavisualizacaoconteudocliente.png',
+            videoUrl: '/videos/videotelavisualizacaodeconteudocliente.mp4',
             detailedDescription: 'E-commerce completo desenvolvido para artesãos locais. Inclui sistema de pagamento, gestão de produtos, controle de estoque e painel administrativo completo.',
             shadowColor: 'rgba(5,150,105,0.3)'
         },
@@ -217,8 +217,8 @@ const projects = {
             id: 10,
             title: 'Administração de Aulas',
             description: 'Este projeto foi desenvolvido para implementar as telas de cadastro de conteúdo do administrador em um sistema geral. Essas telas fazem parte de uma plataforma de conteúdos e aulas, permitindo o cadastro e a gestão dos conteúdos que compõem as trilhas de aprendizagem disponibilizadas aos clientes.',
-            coverImage: '/image/imagemtelacadastrodeconteudoadm.png',
-            videoUrl: '/videos/videotelacadastrodeconteúdosadm.mp4',
+            coverImage: '/Image/imagemtelacadastrodeconteudoadm.png',
+            videoUrl: '/videos/videotelacadastrodeconteudosadm.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para implementar as telas de cadastro de conteúdo do administrador em um sistema geral. Essas telas fazem parte de uma plataforma de conteúdos e aulas, permitindo o cadastro e a gestão dos conteúdos que compõem as trilhas de aprendizagem disponibilizadas aos clientes.',
             shadowColor: 'rgba(5,150,105,0.3)'
         },
@@ -226,7 +226,7 @@ const projects = {
             id: 11,
             title: 'Portfólio Profissional',
             description: 'Este projeto foi desenvolvido para apresentar meu trabalho e consolidar um perfil profissional alinhado à minha identidade.',
-            coverImage: '/image/imagemportfoliokaylanecoutinho.png',
+            coverImage: '/Image/imagemportfoliokaylanecoutinho.png',
             videoUrl: '/videos/videoportifoliokaylanecoutinho.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para apresentar meu trabalho e consolidar um perfil profissional alinhado à minha identidade.',
             shadowColor: 'rgba(5,150,105,0.3)'
