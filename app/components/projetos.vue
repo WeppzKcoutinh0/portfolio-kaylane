@@ -1,10 +1,10 @@
 <template>
-    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 py-16">
+    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-4 sm:px-6 py-10 sm:py-16">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
-            <div class="mb-12">
-                <h1 class="text-4xl font-bold text-white mb-3">Meus Projetos</h1>
-                <p class="text-slate-400 text-base max-w-3xl">
+            <div class="mb-8 sm:mb-12">
+                <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2 sm:mb-3">Meus Projetos</h1>
+                <p class="text-slate-400 text-sm sm:text-base max-w-3xl">
                     Explore uma seleção de projetos que demonstram minha expertise em
                     diversas linguagens de TI. Cada projeto reflete um caso real trabalhado
                     e aplicado, mostrando soluções criativas e técnicas.
@@ -12,21 +12,21 @@
             </div>
 
             <!-- Planilhas Section -->
-            <div class="mb-12">
-                <h2 class="text-2xl font-bold text-white mb-6">Planilhas</h2>
-                <div class="grid md:grid-cols-3 gap-6">
+            <div class="mb-10 sm:mb-12">
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Planilhas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     <div v-for="project in projects.planilhas" :key="project.id" @click="openProject(project, false)"
-                        class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 active:-translate-y-2 active:scale-[1.02] cursor-pointer"
                         :style="{ boxShadow: `0 20px 50px ${project.shadowColor}` }">
                         <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
                             :style="{ background: `linear-gradient(to right, ${project.shadowColor}, ${project.shadowColor})` }">
                         </div>
-                        <div class="relative h-48 overflow-hidden">
+                        <div class="relative h-40 sm:h-48 overflow-hidden">
                             <img :src="project.coverImage" :alt="project.title"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -34,31 +34,31 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="relative p-6">
-                            <h3 class="text-lg font-bold text-white mb-2">{{ project.title }}</h3>
-                            <p class="text-slate-400 text-sm">{{ project.description }}</p>
+                        <div class="relative p-4 sm:p-6">
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2">{{ project.title }}</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm line-clamp-3">{{ project.description }}</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Dev-Aplicativos Internos Section - COM SUPORTE A VERTICAL -->
-            <div class="mb-12">
-                <h2 class="text-2xl font-bold text-white mb-6">Dev-Aplicativos Internos</h2>
-                <div class="grid md:grid-cols-3 gap-6">
+            <div class="mb-10 sm:mb-12">
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Dev-Aplicativos Internos</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     <div v-for="project in projects.aplicativos" :key="project.id" @click="openProject(project, true)"
-                        class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 active:-translate-y-2 active:scale-[1.02] cursor-pointer"
                         :style="{ boxShadow: `0 20px 50px ${project.shadowColor}` }">
                         <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
                             :style="{ background: `linear-gradient(to right, ${project.shadowColor}, ${project.shadowColor})` }">
                         </div>
                         <!-- Card com altura maior para imagens verticais -->
-                        <div class="relative h-64 overflow-hidden bg-slate-900">
+                        <div class="relative h-52 sm:h-64 overflow-hidden bg-slate-900">
                             <img :src="project.coverImage" :alt="project.title"
                                 class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -66,9 +66,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="relative p-6">
-                            <h3 class="text-lg font-bold text-white mb-2">{{ project.title }}</h3>
-                            <p class="text-slate-400 text-sm">{{ project.description }}</p>
+                        <div class="relative p-4 sm:p-6">
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2">{{ project.title }}</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm line-clamp-3">{{ project.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -76,20 +76,20 @@
 
             <!-- Front-end Section -->
             <div>
-                <h2 class="text-2xl font-bold text-white mb-6">Front-end</h2>
-                <div class="grid md:grid-cols-3 gap-6">
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Front-end</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     <div v-for="project in projects.frontend" :key="project.id" @click="openProject(project, false)"
-                        class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 active:-translate-y-2 active:scale-[1.02] cursor-pointer"
                         :style="{ boxShadow: `0 20px 50px ${project.shadowColor}` }">
                         <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
                             :style="{ background: `linear-gradient(to right, ${project.shadowColor}, ${project.shadowColor})` }">
                         </div>
-                        <div class="relative h-48 overflow-hidden">
+                        <div class="relative h-40 sm:h-48 overflow-hidden">
                             <img :src="project.coverImage" :alt="project.title"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -97,9 +97,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="relative p-6">
-                            <h3 class="text-lg font-bold text-white mb-2">{{ project.title }}</h3>
-                            <p class="text-slate-400 text-sm">{{ project.description }}</p>
+                        <div class="relative p-4 sm:p-6">
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2">{{ project.title }}</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm line-clamp-3">{{ project.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -108,26 +108,26 @@
 
         <!-- Modal -->
         <div v-if="selectedProject"
-            class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm modal-fade">
+            class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm modal-fade">
             <div
-                class="bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl">
+                class="bg-slate-900 rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl">
                 <div
-                    class="sticky top-0 bg-slate-900 border-b border-slate-700 p-6 flex items-center justify-between z-10">
-                    <h2 class="text-2xl font-bold text-white">{{ selectedProject.title }}</h2>
-                    <button @click="selectedProject = null" class="p-2 hover:bg-slate-800 rounded-lg transition-colors">
-                        <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="sticky top-0 bg-slate-900 border-b border-slate-700 p-4 sm:p-6 flex items-center justify-between z-10">
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-white pr-4">{{ selectedProject.title }}</h2>
+                    <button @click="selectedProject = null" class="p-2 hover:bg-slate-800 rounded-lg transition-colors flex-shrink-0">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
 
-                <div class="p-6 space-y-6">
+                <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
                     <!-- Video Section - Condicional para vertical ou horizontal -->
                     <div :class="isVerticalMode ? 'flex justify-center' : ''">
                         <div :class="[
                             'rounded-xl overflow-hidden bg-slate-800',
-                            isVerticalMode ? 'w-auto max-w-sm aspect-[9/16]' : 'aspect-video w-full'
+                            isVerticalMode ? 'w-full max-w-xs sm:max-w-sm aspect-[9/16]' : 'aspect-video w-full'
                         ]">
                             <video 
                                 class="w-full h-full"
@@ -141,11 +141,11 @@
 
                     <!-- Description Section -->
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-4">Sobre o Projeto</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Sobre o Projeto</h3>
                         <textarea v-model="projectDescription"
-                            class="w-full min-h-[200px] bg-slate-800 text-slate-300 rounded-xl p-4 border border-slate-700 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-all resize-y"
+                            class="w-full min-h-[150px] sm:min-h-[200px] bg-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 border border-slate-700 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-all resize-y text-sm sm:text-base"
                             placeholder="Digite aqui informações detalhadas sobre o projeto..." />
-                        <p class="text-slate-500 text-sm mt-2">
+                        <p class="text-slate-500 text-xs sm:text-sm mt-2">
                             Você pode editar a descrição do projeto diretamente aqui
                         </p>
                     </div>
@@ -261,5 +261,12 @@ watch(selectedProject, (newVal) => {
     to {
         opacity: 1;
     }
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 </style>
