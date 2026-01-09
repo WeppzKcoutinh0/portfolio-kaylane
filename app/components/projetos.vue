@@ -197,20 +197,38 @@ const projects = {
         },
         {
             id: 8,
-            title: 'Portfólio Pessoal',
-            description: 'Um portfólio elegante e minimalista para mostrar trabalhos e projetos de forma profissional.',
-            coverImage: '/image/imagem8.jpg',
-            videoUrl: '/videos/videotelahero.mp4',
-            detailedDescription: 'Portfólio pessoal com design minimalista e elegante. Totalmente responsivo com animações sutis e navegação intuitiva.',
+            title: 'Sistema de Aulas',
+            description: 'Este projeto foi desenvolvido para implementar as telas de homepage do cliente em um sistema geral. A homepage corresponde a um sistema de conteúdos e aulas, no qual o usuário pode acessar seus materiais, visualizar os conteúdos disponíveis e iniciar trilhas de aprendizagem.',
+            coverImage: '/image/imagemtelahomepagecliente.png',
+            videoUrl: '/videos/videotelahomepagecliente.mp4',
+            detailedDescription: 'Este projeto foi desenvolvido para implementar as telas de homepage do cliente em um sistema geral. A homepage corresponde a um sistema de conteúdos e aulas, no qual o usuário pode acessar seus materiais, visualizar os conteúdos disponíveis e iniciar trilhas de aprendizagem.',
             shadowColor: 'rgba(148,163,184,0.3)'
         },
         {
             id: 9,
-            title: 'E-commerce de Produtos Artesanais',
-            description: 'Uma loja virtual completa com carrinho de compras, checkout e painel administrativo integrado.',
-            coverImage: '/image/imagem9.jpg',
-            videoUrl: '/videos/videominhajornada.mp4',
+            title: 'Trilha de Conteúdos',
+            description: 'Este projeto foi desenvolvido para implementar as telas de visualização de conteúdo do cliente em um sistema geral. Essas telas fazem parte de uma plataforma de conteúdos e aulas, permitindo que o usuário acesse sua trilha de aprendizagem após entrar na homepage e dê início ao consumo dos conteúdos.',
+            coverImage: '/image/imagemtelavisualizaçãoconteúdocliente.png',
+            videoUrl: '/videos/videotelavisualizaçãodeconteudocliente.mp4',
             detailedDescription: 'E-commerce completo desenvolvido para artesãos locais. Inclui sistema de pagamento, gestão de produtos, controle de estoque e painel administrativo completo.',
+            shadowColor: 'rgba(5,150,105,0.3)'
+        },
+        {
+            id: 10,
+            title: 'Administração de Aulas',
+            description: 'Este projeto foi desenvolvido para implementar as telas de cadastro de conteúdo do administrador em um sistema geral. Essas telas fazem parte de uma plataforma de conteúdos e aulas, permitindo o cadastro e a gestão dos conteúdos que compõem as trilhas de aprendizagem disponibilizadas aos clientes.',
+            coverImage: '/image/imagemtelacadastrodeconteudoadm.png',
+            videoUrl: '/videos/videotelacadastrodeconteúdosadm.mp4',
+            detailedDescription: 'Este projeto foi desenvolvido para implementar as telas de cadastro de conteúdo do administrador em um sistema geral. Essas telas fazem parte de uma plataforma de conteúdos e aulas, permitindo o cadastro e a gestão dos conteúdos que compõem as trilhas de aprendizagem disponibilizadas aos clientes.',
+            shadowColor: 'rgba(5,150,105,0.3)'
+        },
+        {
+            id: 11,
+            title: 'Portfólio Profissional',
+            description: 'Este projeto foi desenvolvido para apresentar meu trabalho e consolidar um perfil profissional alinhado à minha identidade.',
+            coverImage: '/image/imagemportfoliokaylanecoutinho.png',
+            videoUrl: '/videos/videoportifoliokaylanecoutinho.mp4',
+            detailedDescription: 'Este projeto foi desenvolvido para apresentar meu trabalho e consolidar um perfil profissional alinhado à minha identidade.',
             shadowColor: 'rgba(5,150,105,0.3)'
         }
     ]

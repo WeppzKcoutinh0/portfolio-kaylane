@@ -80,7 +80,7 @@
                             Aos 17 anos, ainda no ensino médio, iniciei um curso de tecnologia para explorar meu interesse pela área. Durante um ano e meio de formação, aprofundei-me no desenvolvimento de soluções voltadas para a organização e o dinamismo da experiência do cliente. Desde então, sigo atuando na resolução de problemas tecnológicos para empresas e profissionais autônomos (PJ).
                         </p>
                         <p>
-                            Após o curso, realizei 4 meses de estágio no <span class="text-cyan-400 font-semibold">Instituto Cicluz Ltda</span>, onde fui posteriormente contratada via CLT e atuei por mais de um ano. Minhas responsabilidades incluíram o desenvolvimento de planilhas integradas com Python, criação de aplicativos internos, Web Design (Front-end), UI/UX no Figma, além do desenvolvimento de landing pages utilizando Vue, Nuxt, TypeScript e CSS.
+                            Após o curso, realizei 4 meses de estágio no <span class="text-cyan-400 font-semibold">Instituto Cicluz Ltda</span>, onde fui posteriormente contratada via CLT e atuei por mais de um ano. Minhas responsabilidades incluíram o desenvolvimento de planilhas integradas com Python, criação de aplicativos internos, Web Design (Front-end), Web designer no Figma/Uizard, além do desenvolvimento de landing pages utilizando Vue, Nuxt, TypeScript e CSS.
                         </p>
                         <p>
                             Atualmente, curso graduação na área com o objetivo de evoluir profissionalmente. Meu foco é a implementação de soluções que tragam <span class="text-blue-400 font-semibold">agilidade, segurança de dados e organização</span> ao ambiente corporativo.
@@ -214,7 +214,7 @@
                                 </div>
                                 <div
                                     class="relative bg-black px-6 py-3 rounded-lg border border-gray-700 group-hover/skill:border-pink-400 transition text-center cursor-pointer">
-                                    <p class="font-semibold text-pink-300">Web Design-UI/UX</p>
+                                    <p class="font-semibold text-pink-300">Web Design</p>
                                 </div>
                             </div>
                             <div class="group/skill relative">
