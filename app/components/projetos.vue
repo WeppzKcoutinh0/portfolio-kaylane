@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <!-- Dev-Aplicativos Internos Section - COM SUPORTE A VERTICAL -->
+            <!-- Dev-Aplicativos Internos Section -->
             <div class="mb-10 sm:mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Dev-Aplicativos Internos</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
@@ -52,7 +52,6 @@
                         <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
                             :style="{ background: `linear-gradient(to right, ${project.shadowColor}, ${project.shadowColor})` }">
                         </div>
-                        <!-- Card com altura maior para imagens verticais -->
                         <div class="relative h-52 sm:h-64 overflow-hidden bg-slate-900">
                             <img :src="project.coverImage" :alt="project.title"
                                 class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
@@ -75,7 +74,7 @@
             </div>
 
             <!-- Front-end Section -->
-            <div>
+            <div class="mb-10 sm:mb-12">
                 <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Front-end</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                     <div v-for="project in projects.frontend" :key="project.id" @click="openProject(project, false)"
@@ -104,6 +103,38 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Sistemas Section -->
+            <div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Sistemas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                    <div v-for="project in projects.sistemas" :key="project.id" @click="openProject(project, false)"
+                        class="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 active:-translate-y-2 active:scale-[1.02] cursor-pointer"
+                        :style="{ boxShadow: `0 20px 50px ${project.shadowColor}` }">
+                        <div class="absolute -bottom-4 left-0 right-0 h-16 blur-2xl rounded-full"
+                            :style="{ background: `linear-gradient(to right, ${project.shadowColor}, ${project.shadowColor})` }">
+                        </div>
+                        <div class="relative h-40 sm:h-48 overflow-hidden">
+                            <img :src="project.coverImage" :alt="project.title"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="relative p-4 sm:p-6">
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2">{{ project.title }}</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm line-clamp-3">{{ project.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Modal -->
@@ -123,7 +154,7 @@
                 </div>
 
                 <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
-                    <!-- Video Section - Condicional para vertical ou horizontal -->
+                    <!-- Video Section -->
                     <div :class="isVerticalMode ? 'flex justify-center' : ''">
                         <div :class="[
                             'rounded-xl overflow-hidden bg-slate-800',
@@ -173,6 +204,15 @@ const projects = {
             detailedDescription: 'Este projeto foi desenvolvido para otimizar o controle de estoque de uma empresa de médio porte. Utilizando fórmulas avançadas do Excel e integração com Power Query, o sistema permite rastreamento em tempo real, alertas de estoque baixo e relatórios automatizados.',
             shadowColor: 'rgba(6,182,212,0.3)'
         },
+        {
+            id: 2,
+            title: 'Automação Inteligente com Google Workspace',
+            description: 'Desenvolvimento de solução automatizada integrando Google Sheets, Google Forms e Google Apps Script para coleta, processamento e gestão eficiente de dados em tempo real, otimizando fluxos operacionais e reduzindo tarefas manuais.',
+            coverImage: '/Image/testeautomatizacao.png',
+            videoUrl: '/videos/videoautomatizacao.mp4',
+            detailedDescription: 'Desenvolvimento de solução automatizada integrando Google Sheets, Google Forms e Google Apps Script para coleta, processamento e gestão eficiente de dados em tempo real, otimizando fluxos operacionais e reduzindo tarefas manuais.',
+            shadowColor: 'rgba(6,182,212,0.3)'
+        },
     ],
     aplicativos: [
         {
@@ -182,6 +222,24 @@ const projects = {
             coverImage: '/Image/imagemappinterno.jpeg',
             videoUrl: '/videos/videoappinterno.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para organizar e gerenciar a coleção de um colecionador, permitindo o controle detalhado dos itens possuídos e facilitando a filtragem e a consulta, garantindo mais organização e praticidade.',
+            shadowColor: 'rgba(251,146,60,0.3)'
+        },
+        {
+            id: 5,
+            title: 'Gestão de Setores Corporativos',
+            description: 'Desenvolvimento de aplicação interna para empresas, focada no cadastro, organização e gerenciamento de setores, proporcionando maior controle estrutural, padronização de informações e eficiência na administração organizacional.',
+            coverImage: '/Image/imagemcadastrosetores.jpeg',
+            videoUrl: '/videos/videocadastrosetores.mp4',
+            detailedDescription: 'Desenvolvimento de aplicação interna para empresas, focada no cadastro, organização e gerenciamento de setores, proporcionando maior controle estrutural, padronização de informações e eficiência na administração organizacional.',
+            shadowColor: 'rgba(251,146,60,0.3)'
+        },
+        {
+            id: 6,
+            title: 'Gestão Integrada de Empresas e Colaboradores',
+            description: 'Desenvolvimento de aplicação interna para cadastro e gerenciamento de empresas e colaboradores, permitindo a emissão de notas fiscais, organização de dados corporativos e controle completo de documentações, garantindo conformidade, eficiência operacional e centralização das informações.',
+            coverImage: '/Image/imagemcadastrocolaboradores.jpeg',
+            videoUrl: '/videos/videocadastrocolaboradores.mp4',
+            detailedDescription: 'Desenvolvimento de aplicação interna para cadastro e gerenciamento de empresas e colaboradores, permitindo a emissão de notas fiscais, organização de dados corporativos e controle completo de documentações, garantindo conformidade, eficiência operacional e centralização das informações.',
             shadowColor: 'rgba(251,146,60,0.3)'
         },
     ],
@@ -222,6 +280,8 @@ const projects = {
             detailedDescription: 'Este projeto foi desenvolvido para implementar as telas de cadastro de conteúdo do administrador em um sistema geral. Essas telas fazem parte de uma plataforma de conteúdos e aulas, permitindo o cadastro e a gestão dos conteúdos que compõem as trilhas de aprendizagem disponibilizadas aos clientes.',
             shadowColor: 'rgba(5,150,105,0.3)'
         },
+    ],
+    sistemas: [
         {
             id: 11,
             title: 'Portfólio Profissional',
@@ -230,7 +290,7 @@ const projects = {
             videoUrl: '/videos/videoportifoliokaylanecoutinho.mp4',
             detailedDescription: 'Este projeto foi desenvolvido para apresentar meu trabalho e consolidar um perfil profissional alinhado à minha identidade.',
             shadowColor: 'rgba(5,150,105,0.3)'
-        }
+        },
     ]
 }
 
